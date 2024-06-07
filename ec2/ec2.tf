@@ -7,6 +7,8 @@ resource "aws_instance" "ec2" {
   # security_groups = [aws_security_group.security_group.id] 
   subnet_id       = var.subnet_id
 
+  vpc_security_group_ids = [var.security_group_id] // Use the security group ID
+
   tags = {
     Name = each.value.instance_name
   }

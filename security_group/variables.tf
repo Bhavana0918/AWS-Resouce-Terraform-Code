@@ -9,13 +9,14 @@ variable "description" {
 }
 
 variable "vpc_id" {
-  description = "VPC ID where the security group will be created"
+  description = "The VPC ID where the security group will be created"
   type        = string
 }
 
 variable "ingress_rules" {
   description = "List of ingress rules"
   type = list(object({
+    description = string
     from_port   = number
     to_port     = number
     protocol    = string
@@ -26,6 +27,7 @@ variable "ingress_rules" {
 variable "egress_rules" {
   description = "List of egress rules"
   type = list(object({
+    description = string
     from_port   = number
     to_port     = number
     protocol    = string
@@ -38,3 +40,4 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
