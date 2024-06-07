@@ -130,5 +130,5 @@ variable "listener_protocol" {
 variable "ec2_instance_ids" {
   description = "A map of EC2 instance IDs to attach to the target group"
   type        = map(string)
-  default ="null"
+  default =null
 }
