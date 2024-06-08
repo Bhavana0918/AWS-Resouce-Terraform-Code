@@ -8,7 +8,7 @@ resource "aws_instance" "ec2" {
   subnet_id       = var.subnet_id
 
   vpc_security_group_ids = [var.security_group_id] 
-  user_data = base64decode(each.value.user_data)
+  user_data = each.value.user_data
 
   tags = {
     Name = each.value.instance_name
