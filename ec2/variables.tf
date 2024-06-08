@@ -19,3 +19,9 @@ variable "security_group_id" {
   description = "The security group ID to attach to instances"
   type        = string
 }
+
+variable "user_data" {
+  description = "User data script to configure the instance"
+  type        = string
+  default     = ""
+}
